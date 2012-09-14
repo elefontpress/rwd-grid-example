@@ -132,10 +132,8 @@ footer {
     
     #featured {
       .featured-item {
-        @include column(2);
-        &:nth-child(6) {
-          @include last;
-        }
+        @include column(4);
+        @include last-col3;
       }  
     }
 
@@ -153,8 +151,4 @@ footer {
       @include last-col4;
     }
   }
-
 }
-
-
-

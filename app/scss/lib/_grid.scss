@@ -54,7 +54,6 @@ $grid_width: ((($column_width+($gutter_width))*$columns)-$gutter_width);
   }
 }
 
-
 @mixin last-col4 {
   &:nth-child(n) {
     margin-right: $gutter-width;
@@ -69,4 +68,3 @@ $grid_width: ((($column_width+($gutter_width))*$columns)-$gutter_width);
   margin-left:2.5%;
   margin-right: 2.5%;
 }
-

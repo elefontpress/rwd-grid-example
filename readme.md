@@ -6,7 +6,7 @@ Here are the major points:
 
 ## Infinitely Nest-able
 
-You can nest grids to your heart's content. Put a 6 column layout in side a 4-column layout. To do this I decided to forgo the split-the-gutters approach, and wen with right margin gutters instead. That means we need to know what the last column is so we can remove the gutter. I made some handy mix-ins to help with this.
+You can nest grids to your heart's content. Put a 6 column layout in side a 4-column layout. To do this I decided to forgo the split-the-gutters approach, and went with right margin gutters instead. That means we need to know what the last column is so we can remove the gutter. I made some handy mix-ins to help with this.
 
 ## Compassy and SASSy
 
