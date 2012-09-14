@@ -1,0 +1,8 @@
+/* line 1, ../../app/scss/content.scss */
+img {
+  max-width: 100%;
+  margin-bottom: 0.5em;
+  border: 1px solid #ccc;
+  margin-left: -1px;
+  margin-right: -1px;
+  display: block; }
