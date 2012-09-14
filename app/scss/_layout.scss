@@ -1,0 +1,154 @@
+// This is where you put your layout styles. //
+
+body {
+  margin: 0;
+}
+
+.container {
+  @include container;
+}
+
+header {
+  @include mobile-grid;
+  margin-bottom: 2em;
+  border-bottom: 1px solid $border-color;
+  padding-bottom: 1.5em;
+  h1 {
+    margin-top: 1em;
+  }
+}
+
+
+#content-wrap {
+  @include clearfix;
+}
+
+#home-featured-items {
+  margin-bottom: 2em;
+  border-bottom: 1px solid $border-color;
+  padding-bottom: 2em;
+  @include mobile-grid;
+  
+  .featured-item {
+    margin-bottom: 1.5em;
+  }
+}
+
+#content {
+  @include mobile-grid;
+  margin-bottom: 1em;
+  
+  #featured {
+    margin-top: 2em;
+    border-top: 1px solid $border-color;
+    padding-top: 2em;
+
+    .featured-item {
+      margin-bottom: 1.5em;
+    }  
+  }
+
+  #related {
+    margin-top: 2em;
+    border-top: 1px solid $border-color;
+    padding-top: 2em;
+    
+    .related-item {
+      margin-bottom: 1.5em;
+    }  
+  }
+}
+
+#sidebar {
+  @include mobile-grid;
+  margin-top: 2em;
+  border-top: 1px solid $border-color;
+  padding-top: 2em;
+}
+
+footer {
+  @include mobile-grid;
+  margin-top: 2em;
+  border-top: 1px solid $border-color;
+  padding-top: 2em;
+  
+}
+
+@media only screen and (min-width: 600px) {
+
+#content-wrap {
+  @include mobile-grid
+}
+
+#home-featured-items {
+  @include clearfix;
+  @include column(12);
+  @include last;
+  .featured-item {
+    @include column(6);
+    @include last-col2;
+  }
+}
+  
+  #content {
+    @include column(8);
+    float: right;
+    @include last;
+  }
+
+  #sidebar {
+    @include column(4);
+  }
+
+  #featured {
+    @include clearfix;
+    .featured-items {
+      .featured-item {
+        @include column(6);
+        @include last-col2;
+      }        
+    }
+  }
+
+  #related {
+    @include clearfix;
+    .related-item {
+      @include column(6);
+      @include last-col2;
+    }  
+  }
+  
+  #sidebar {
+    margin-top: 0;
+    padding-top: 0;
+    border: 0 none;
+  }
+}
+
+@media only screen and (min-width: 900px) {
+  
+  #content {
+    margin-bottom: 0;
+    
+    #featured {
+      .featured-item {
+        @include column(4);
+        @include last-col3;
+      }  
+    }
+
+    #related {
+      .related-item {
+        @include column(3);
+        @include last-col4;
+      }  
+    }
+  }
+
+  #home-featured-items {
+    .featured-item {
+      @include column(3);
+      @include last-col4;
+    }
+  }
+}
