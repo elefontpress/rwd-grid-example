@@ -1,21 +1,33 @@
 # Bearded Responsive Grid Example
 
-This is a simple demo page using the responsive grid I developed for the Pittsburgh Children's Museum website, and we've since been using variations of on our client sites at Bearded. It's a 12-column grid that uses percentages for everything. The calculations I used are calculated to never be more granular than an eighth of a percent to avoid rounding issues.
+This is a simple demo page using the responsive grid I developed for the Pittsburgh Children's Museum website. Since then, we've continued using variations of it on our client sites at Bearded. It's a 12-column grid that uses percentages for everything. The values I used for gutter and column widths are calculated to never be more granular than an eighth of a percent, to avoid rounding issues.
 
 Here are the major points:
 
 ## Infinitely Nest-able
 
-You can nest grids to your heart's content. Put a 6 column layout in side a 4-column layout. To do this I decided to forgo the split-the-gutters approach, and went with right margin gutters instead. That means we need to know what the last column is so we can remove the gutter. I made some handy mix-ins to help with this.
+You can nest grids to your heart's content. Put a 6 column layout in side a 4-column layout. To do this I decided to forgo the split-the-gutters approach, and went with right margin gutters instead. That means we need to know what the last column is so we can remove the gutter on it. I made some handy mix-ins to help with this (more details below).
 
 ## Compassy and SASSy
 
-The grid is for use with SASS and the Compass framework in specific. All the useable parts are mix-ins, of which there are two categories: grid settings and last settings. Grid settings apply column-based widths. Last settings calculate a pattern for which columns get the last setting (and thus no right margin).
+The grid is for use with SASS and the Compass framework in specific. All the useable parts are mix-ins, of which there are two categories: column settings and last settings. Column settings apply column-based widths. Last settings calculate a pattern for which columns get the last setting (and thus no right margin).
+
+### Column Settings
 
 When determining what to use, remember that the width of an area is calculated in the number of columns (out of a possible 12) that make up that width. So an area that you want to be 50% of the possible width it could be (ie. 6 columns wide) should get @include column(6).
 
+### Last Settings
+
 On the other hand, last settings are trying to determine which column will get the last class (and thus no right margin). If you want to do a two-column layout, you'd use @include last-col2.
 
+### Example
+
 So if you want a 4 column grid, you'll want to combine @include column(3) (3 x 4 = 12) with @include last-col4. Cool? Cool.
+
+## Browser Support
+
+The grid relies heavily on nth-child pseudo-class, [which isn't supported in IE7 or 8 "When Can I Use CSS3 Selectors"](http://caniuse.com/#feat=css-sel3). For the Children's Museum site we added classes with Javascript. But since then we've realized that it's generally more efficient to add classes into our markup, and then make sure the grid CSS uses those selectors as a fall-back to nth-child. 
+
+Having an nth-child-based grid is great during the wireframing and design process because of all the speed and flexibility it provides in achieving layouts. With a finished site design, though, there often won't be that many layouts to account for, so this seems like a fairly sane approach to get IE working.
 
 Enjoy!
