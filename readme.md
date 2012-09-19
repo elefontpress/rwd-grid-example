@@ -30,4 +30,8 @@ The grid relies heavily on nth-child pseudo-class, [which isn't supported in IE7
 
 Having an nth-child-based grid is great during the wireframing and design process because of all the speed and flexibility it provides in achieving layouts. With a finished site design, though, there often won't be that many layouts to account for, so this seems like a fairly sane approach to get IE working.
 
+## 12 or 16?
+
+The grid file also has variables for a 16-column layout commented out. Feel free to exchange those for the 12-column variables. The advantage of 12-column is, of course, that you you can easily achieve equal-width 3 or 4 column layouts. With a 16-column grid you lose the equal width 3-column option, but your grid is a little more granular. With a little more work, a well-implemented 16-column grid can lead to some really cool asymmetrical layouts.
+
 Enjoy!
