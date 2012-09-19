@@ -5,6 +5,13 @@ $columns: 12;
 $column_width: 5.125%;
 $grid_width: ((($column_width+($gutter_width))*$columns)-$gutter_width);
 
+// A 16-column version of the grid:
+
+// $gutter_width: 4%;
+// $columns: 16;
+// $column_width: 2.5%;
+// $grid_width: ((($column_width+($gutter_width))*$columns)-$gutter_width);
+
 @mixin container {
   width: $grid_width;
   margin: auto;
@@ -39,27 +46,54 @@ $grid_width: ((($column_width+($gutter_width))*$columns)-$gutter_width);
 @mixin last-col2 {
   &:nth-child(n) {
     margin-right: $gutter-width;
+    .lt-ie8 &{
+      margin-right: $gutter_width - 0.25%;
+    }
+    float: left;
+    clear: none;
   }
   &:nth-child(2n+2) {
     @include last;
+    float: right;
+  }
+  &:nth-child(2n+3) {
+    clear: both;
   }
 }
 
 @mixin last-col3 {
   &:nth-child(n) {
     margin-right: $gutter-width;
+    .lt-ie8 &{
+      margin-right: $gutter_width - 0.25%;
+    }
+    float: left;
+    clear: none;
   }
   &:nth-child(3n+3) {
     @include last;
+    float: right;
+  }
+  &:nth-child(3n+4) {
+    clear: both;
   }
 }
 
 @mixin last-col4 {
   &:nth-child(n) {
     margin-right: $gutter-width;
+    .lt-ie8 &{
+      margin-right: $gutter_width - 0.25%;
+    }
+    float: left;
+    clear: none;
   }
   &:nth-child(4n+4) {
     @include last;
+    float: right;
+  }
+  &:nth-child(4n+5) {
+    clear: both;
   }
 }
 

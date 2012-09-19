@@ -8,3 +8,14 @@
 
 @import "content.scss";
 @import "layout.scss";
+
+
+// Media Queries //
+
+@media only screen and (min-width: 35em) {
+  @import "layout/_medium.scss";
+}
+
+@media only screen and (min-width: 55em) {
+  @import "layout/_large.scss";
+}

@@ -1,0 +1,47 @@
+#content-wrap {
+  @include mobile-grid
+}
+
+#home-featured-items {
+  @include clearfix;
+  @include column(12);
+  @include last;
+  .featured-item {
+    @include column(6);
+    @include last-col2;
+  }
+}
+  
+#content {
+  @include column(8);
+  float: right;
+  @include last;
+}
+
+#sidebar {
+  @include column(4);
+}
+
+#featured {
+  @include clearfix;
+  .featured-items {
+    .featured-item {
+      @include column(6);
+      @include last-col2;
+    }        
+  }
+}
+
+#related {
+  @include clearfix;
+  .related-item {
+    @include column(6);
+    @include last-col2;
+  }  
+}
+
+#sidebar {
+  margin-top: 0;
+  padding-top: 0;
+  border: 0 none;
+}

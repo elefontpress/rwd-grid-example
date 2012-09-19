@@ -1,0 +1,24 @@
+#content {
+  margin-bottom: 0;
+  
+  #featured {
+    .featured-item {
+      @include column(4);
+      @include last-col3;
+    }  
+  }
+
+  #related {
+    .related-item {
+      @include column(3);
+      @include last-col4;
+    }  
+  }
+}
+
+#home-featured-items {
+  .featured-item {
+    @include column(3);
+    @include last-col4;
+  }
+}
