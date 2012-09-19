@@ -6,11 +6,11 @@ Here are the major points:
 
 ## Infinitely Nest-able
 
-You can nest grids to your heart's content. Put a 6 column layout in side a 4-column layout. To do this I decided to forgo the split-the-gutters approach, and went with right margin gutters instead. That means we need to know what the last column is so we can remove the gutter on it. I made some handy mix-ins to help with this (more details below).
+You can nest grids to your heart's content. Put a 6 column layout in side a 4-column layout. To do this I decided to forgo the split-the-gutters approach, and went with right margin gutters instead. That means we need to know what the last column is so we can remove the gutter on it. I made some handy mixins to help with this (more details below).
 
-## Compassy and SASSy
+## Compass-y and Sass-y
 
-The grid is for use with SASS and the Compass framework in specific. All the useable parts are mix-ins, of which there are two categories: column settings and last settings. Column settings apply column-based widths. Last settings calculate a pattern for which columns get the last setting (and thus no right margin).
+The grid is for use with Sass, and the Compass framework in specific. All the useable parts are mixins, of which there are two categories: column settings and last settings. Column settings apply column-based widths. Last settings calculate a pattern for which columns get the last setting (and thus no right margin).
 
 ### Column Settings
 
@@ -26,7 +26,7 @@ So if you want a 4 column grid, you'll want to combine @include column(3) (3 x 4
 
 ## Browser Support
 
-The grid relies heavily on nth-child pseudo-class, [which isn't supported in IE7 or 8 "When Can I Use CSS3 Selectors"](http://caniuse.com/#feat=css-sel3). For the Children's Museum site we added classes with Javascript. But since then we've realized that it's generally more efficient to add classes into our markup, and then make sure the grid CSS uses those selectors as a fall-back to nth-child. 
+The grid relies heavily on the nth-child pseudo-class, [which isn't supported in IE7 or 8 "When Can I Use CSS3 Selectors"](http://caniuse.com/#feat=css-sel3). For the Children's Museum site we added classes with Javascript. But since then we've realized that it's generally more efficient to add classes into our markup, and then make sure the grid CSS uses those selectors as a fall-back to nth-child. 
 
 Having an nth-child-based grid is great during the wireframing and design process because of all the speed and flexibility it provides in achieving layouts. With a finished site design, though, there often won't be that many layouts to account for, so this seems like a fairly sane approach to get IE working.
 

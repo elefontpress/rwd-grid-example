@@ -2,20 +2,20 @@
 
 @import "compass";
 
-@import "lib/_colors.scss";
-@import "lib/_grid.scss";
-@import "lib/_typography.scss";
+@import "lib/colors";
+@import "lib/grid";
+@import "lib/typography";
 
-@import "content.scss";
-@import "layout.scss";
+@import "content";
+@import "layout";
 
 
 // Media Queries //
 
 @media only screen and (min-width: 35em) {
-  @import "layout/_medium.scss";
+  @import "layout/medium";
 }
 
 @media only screen and (min-width: 55em) {
-  @import "layout/_large.scss";
+  @import "layout/large";
 }
