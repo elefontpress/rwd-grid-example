@@ -7,6 +7,7 @@ else
   css_dir = File.join 'public', 'stylesheets'
   relative_assets = true
   environment = :production
+  output_style = :expanded
 end
 
 # This is common configuration
