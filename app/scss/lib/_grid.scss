@@ -15,7 +15,7 @@ $grid_width: ((($column_width+($gutter_width))*$columns)-$gutter_width);
 @mixin container {
   width: $grid_width;
   margin: auto;
-  max-width: 1250px;
+  max-width: 1300px;
   *zoom: 1;
 }
 
@@ -32,11 +32,11 @@ $grid_width: ((($column_width+($gutter_width))*$columns)-$gutter_width);
 }
 
 @mixin prepend($num) {
-  margin-left: column_width($num) + ($gutter_width);
+  margin-left: column_width($num) + ($gutter_width * 2);
 }
 
 @mixin append($num) {
-  margin-right: column_width($num) + ($gutter_width);
+  margin-right: column_width($num) + ($gutter_width * 2);
 }
 
 @mixin last {
@@ -44,61 +44,78 @@ $grid_width: ((($column_width+($gutter_width))*$columns)-$gutter_width);
 }
 
 @mixin last-col2 {
-  &:nth-child(n) {
+  &:nth-of-type(n) {
     margin-right: $gutter-width;
-    .lt-ie8 &{
+    .lt-ie8 & {
       margin-right: $gutter_width - 0.25%;
     }
     float: left;
     clear: none;
   }
-  &:nth-child(2n+2) {
+  &:nth-of-type(2n+2) {
     @include last;
     float: right;
   }
-  &:nth-child(2n+3) {
+  &:nth-of-type(2n+3) {
     clear: both;
   }
 }
 
 @mixin last-col3 {
-  &:nth-child(n) {
+  &:nth-of-type(n) {
     margin-right: $gutter-width;
-    .lt-ie8 &{
+    .lt-ie8 & {
       margin-right: $gutter_width - 0.25%;
     }
     float: left;
     clear: none;
   }
-  &:nth-child(3n+3) {
+  &:nth-of-type(3n+3) {
     @include last;
     float: right;
   }
-  &:nth-child(3n+4) {
+  &:nth-of-type(3n+4) {
     clear: both;
   }
 }
 
 @mixin last-col4 {
-  &:nth-child(n) {
+  &:nth-of-type(n) {
     margin-right: $gutter-width;
-    .lt-ie8 &{
+    .lt-ie8 & {
       margin-right: $gutter_width - 0.25%;
     }
     float: left;
     clear: none;
   }
-  &:nth-child(4n+4) {
+  &:nth-of-type(4n+4) {
     @include last;
     float: right;
   }
-  &:nth-child(4n+5) {
+  &:nth-of-type(4n+5) {
+    clear: both;
+  }
+}
+
+@mixin last-col6 {
+  &:nth-of-type(n) {
+    margin-right: $gutter-width;
+    .lt-ie8 & {
+      margin-right: $gutter_width - 0.25%;
+    }
+    float: left;
+    clear: none;
+  }
+  &:nth-of-type(6n+6) {
+    @include last;
+    float: right;
+  }
+  &:nth-of-type(6n+7) {
     clear: both;
   }
 }
 
 @mixin mobile-grid {
-  width: 95%;
-  margin-left:2.5%;
-  margin-right: 2.5%;
+  padding-left: 2.5%;
+  padding-right: 2.5%;
 }
